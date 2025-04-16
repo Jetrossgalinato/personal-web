@@ -1,3 +1,9 @@
-<template>Homepage</template>
+<template>
+  <h1 class="h1main">Homepage</h1>
+</template>
 <script setup></script>
-<style scoped></style>
+<style scoped>
+.h1main {
+  font-family: "Gugi", cursive;
+}
+</style>
