@@ -1,3 +1,3 @@
-<template></template>
-<script setup?></script>
+<template>Homepage</template>
+<script setup></script>
 <style scoped></style>
