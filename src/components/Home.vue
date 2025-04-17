@@ -7,8 +7,8 @@
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <div
-        class="d-flex position-absolute left-0 right-0 justify-center"
-        style="gap: 30px"
+        class="d-flex position-absolute left-0 right-0 justify-center pt-4"
+        style="gap: 40px"
       >
         <span>About</span>
         <span>Projects</span>
@@ -37,5 +37,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 15%;
+}
+
+.navbar span {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar span:hover {
+  color: #51e688;
 }
 </style>
