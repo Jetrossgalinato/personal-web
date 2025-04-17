@@ -26,13 +26,13 @@
   text-align: left;
 }
 .background-image {
-  background-image: url("../assets/main-bg.jpg");
+  background-image: url("../assets/main-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .navbar {
-  background-image: url("../assets/main-bg.jpg");
+  background-image: url("../assets/main-bg.png");
   color: white;
   background-size: cover;
   background-position: center;
