@@ -52,7 +52,6 @@
   font-size: 13px;
 }
 
-/* Underline animation for navbar items */
 .navbar span::after {
   content: "";
   position: absolute;
@@ -72,7 +71,6 @@
   width: 100%;
 }
 
-/* 🌟 Main Content Centered Styling */
 .main-content {
   position: absolute;
   top: 50%;
@@ -93,33 +91,37 @@
   font-weight: normal;
   color: #51e688;
   position: relative;
-  display: inline-block; /* <--- VERY IMPORTANT */
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: border 0.4s ease, color 0.4s ease;
   cursor: pointer;
-  padding-bottom: 4px;
 }
 
-/* ✨ Hover underline animation for Backend Developer */
-.hover-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  background-color: #51e688;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+.main-content h2:hover {
+  border: 2px solid #51e688;
 }
 
-.hover-underline:hover::after {
-  transform: scaleX(1);
+.hover-underline {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: border 0.4s ease, color 0.4s ease;
+  cursor: pointer;
+}
+
+.hover-underline:hover {
+  border: 2px solid #51e688;
+  box-shadow: 0 0 10px #51e68888;
 }
 
 .main-content h3 {
   font-size: 18px;
   font-weight: lighter;
   margin-top: 10px;
-  color: #ffffffcc; /* Slightly transparent white */
+  color: #ffffffcc;
 }
 </style>
