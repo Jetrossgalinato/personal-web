@@ -10,6 +10,7 @@
         class="d-flex position-absolute left-0 right-0 justify-center pt-4"
         style="gap: 50px"
       >
+        <span>Home</span>
         <span>About</span>
         <span>Projects</span>
         <span>Contact</span>
@@ -48,6 +49,7 @@
   position: relative;
   transition: color 0.3s ease;
   padding-bottom: 4px;
+  font-size: 15px;
 }
 
 /* Underline animation */
