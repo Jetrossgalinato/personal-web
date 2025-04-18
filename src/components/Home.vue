@@ -15,7 +15,6 @@
       </div>
     </v-app-bar>
 
-    <!-- 🌟 Main Content Centered -->
     <div class="main-content">
       <h1>Hi I'm Jetross Galinato</h1>
       <h2 class="hover-underline">Backend Developer</h2>
@@ -53,7 +52,7 @@
   font-size: 13px;
 }
 
-/* Underline animation for navbar */
+/* Underline animation for navbar items */
 .navbar span::after {
   content: "";
   position: absolute;
@@ -94,24 +93,27 @@
   font-weight: normal;
   color: #51e688;
   position: relative;
+  display: inline-block; /* <--- VERY IMPORTANT */
   cursor: pointer;
   padding-bottom: 4px;
 }
 
-/* Underline animation for Backend Developer */
+/* ✨ Hover underline animation for Backend Developer */
 .hover-underline::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0%;
   height: 2px;
   background-color: #51e688;
-  transition: width 0.3s ease;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .hover-underline:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .main-content h3 {
