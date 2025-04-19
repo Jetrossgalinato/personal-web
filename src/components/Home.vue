@@ -30,11 +30,7 @@
     </div>
   </v-card>
 
-  <section
-    v-if="!loading"
-    class="background-image about-section"
-    ref="aboutSection"
-  >
+  <section class="background-image about-section" ref="aboutSection">
     <div class="about-content" :class="{ 'fade-in': aboutVisible }">
       <h2>About Me</h2>
       <p>
@@ -69,6 +65,7 @@ function scrollTo(section) {
   if (section === "home") {
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else if (section === "about" && aboutSection.value) {
+    aboutVisible.value = true; // Set to true when navigating to About
     aboutSection.value.scrollIntoView({ behavior: "smooth" });
   }
 }
