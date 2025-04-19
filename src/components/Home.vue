@@ -9,8 +9,8 @@
         class="d-flex position-absolute left-0 right-0 justify-center pt-4"
         style="gap: 50px"
       >
-        <span>Home</span>
-        <span>About</span>
+        <span @click="scrollTo('home')">Home</span>
+        <span @click="scrollTo('about')">About</span>
         <span>Projects</span>
         <span>Contact</span>
       </div>
@@ -25,7 +25,7 @@
   </v-card>
 
   <!-- ✨ About Section -->
-  <section class="about-section">
+  <section class="about-section" ref="aboutSection">
     <div class="about-content">
       <h2>About Me</h2>
       <p>
@@ -39,7 +39,21 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+// Refs for sections
+
+const aboutSection = ref(null);
+
+function scrollTo(section) {
+  if (section === "home") {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // 🛠️ <-- this!
+  } else if (section === "about" && aboutSection.value) {
+    aboutSection.value.scrollIntoView({ behavior: "smooth" });
+  }
+}
+</script>
 
 <style scoped>
 .background-image {
