@@ -3,6 +3,7 @@
     class="d-flex flex-column background-image"
     style="height: 100vh; width: 100vw; position: relative"
   >
+    <!-- Navbar -->
     <v-app-bar rounded class="navbar">
       <div
         class="d-flex position-absolute left-0 right-0 justify-center pt-4"
@@ -15,12 +16,27 @@
       </div>
     </v-app-bar>
 
+    <!-- Hero/Main Section -->
     <div class="main-content">
       <h1>Hi I'm Jetross Galinato</h1>
       <h2 class="hover-underline">Backend Developer</h2>
       <h3>Based in the Philippines</h3>
     </div>
   </v-card>
+
+  <!-- ✨ About Section -->
+  <section class="about-section">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate backend developer with a focus on creating scalable,
+        efficient, and secure web applications. I love working with modern
+        technologies and continuously learning to improve my craft. When I'm not
+        coding, you can find me exploring new coffee shops, traveling, or diving
+        into the latest tech trends!
+      </p>
+    </div>
+  </section>
 </template>
 
 <script setup></script>
@@ -123,5 +139,27 @@
   font-weight: lighter;
   margin-top: 10px;
   color: #ffffffcc;
+}
+
+.about-section {
+  background-color: #101010; /* Dark background for About */
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  font-family: "Gugi", cursive;
+}
+
+.about-section h2 {
+  font-size: 32px;
+  color: #51e688;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #cccccc;
 }
 </style>
