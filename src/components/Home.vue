@@ -25,6 +25,7 @@
   </v-card>
 
   <!-- ✨ About Section -->
+  <div v-motion-fade />
   <section class="background-image about-section" ref="aboutSection">
     <div class="about-content">
       <h2>About Me</h2>
@@ -164,7 +165,7 @@ function scrollTo(section) {
 }
 
 .about-section h2 {
-  font-size: 32px;
+  font-size: 28px;
   color: #51e688;
   margin-bottom: 20px;
 }
