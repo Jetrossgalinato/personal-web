@@ -25,7 +25,7 @@
   </v-card>
 
   <!-- ✨ About Section -->
-  <section class="about-section" ref="aboutSection">
+  <section class="background-image about-section" ref="aboutSection">
     <div class="about-content">
       <h2>About Me</h2>
       <p>
