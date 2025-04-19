@@ -16,8 +16,7 @@
       </div>
     </v-app-bar>
 
-    <!-- Hero/Main Section -->
-    <div class="main-content">
+    <div class="main-content" :class="{ 'fade-in-main': mainVisible }">
       <h1>Hi I'm Jetross Galinato</h1>
       <h2 class="hover-underline">Backend Developer</h2>
       <h3>Based in the Philippines</h3>
@@ -39,10 +38,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onBeforeMount, onUnmounted } from "vue";
 
 const aboutSection = ref(null);
 const aboutVisible = ref(false);
+
+// Force scroll to top before page is mounted
+onBeforeMount(() => {
+  if (typeof window !== "undefined") {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+});
+
+const mainVisible = ref(false);
 
 function scrollTo(section) {
   if (section === "home") {
@@ -54,6 +64,8 @@ function scrollTo(section) {
 
 // IntersectionObserver to detect when About Section is visible
 onMounted(() => {
+  mainVisible.value = true; // Set mainVisible to true when component is mounted
+
   const observer = new IntersectionObserver(
     ([entry]) => {
       aboutVisible.value = entry.isIntersecting;
@@ -130,14 +142,33 @@ onMounted(() => {
   width: 100%;
 }
 
+@keyframes fadeInMain {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+.fade-in-main {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0); /* Back to center */
+  animation: fadeInMain 1s ease-out forwards;
+}
+
 .main-content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateY(-20px); /* COMBINE transforms */
   text-align: center;
   color: white;
   font-family: "Gugi", cursive;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .main-content h1 {
