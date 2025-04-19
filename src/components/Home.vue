@@ -24,10 +24,8 @@
     </div>
   </v-card>
 
-  <!-- ✨ About Section -->
-  <div v-motion-fade />
   <section class="background-image about-section" ref="aboutSection">
-    <div class="about-content">
+    <div class="about-content" :class="{ 'fade-in': aboutVisible }">
       <h2>About Me</h2>
       <p>
         I'm a passionate backend developer with a focus on creating scalable,
@@ -41,22 +39,52 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-// Refs for sections
+import { ref, onMounted, onUnmounted } from "vue";
 
 const aboutSection = ref(null);
+const aboutVisible = ref(false);
 
 function scrollTo(section) {
   if (section === "home") {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // 🛠️ <-- this!
+    window.scrollTo({ top: 0, behavior: "smooth" });
   } else if (section === "about" && aboutSection.value) {
     aboutSection.value.scrollIntoView({ behavior: "smooth" });
   }
 }
+
+// IntersectionObserver to detect when About Section is visible
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      aboutVisible.value = entry.isIntersecting;
+    },
+    { threshold: 0.3 } // fire when about 30% of section is visible
+  );
+
+  if (aboutSection.value) {
+    observer.observe(aboutSection.value);
+  }
+
+  onUnmounted(() => {
+    if (aboutSection.value) {
+      observer.unobserve(aboutSection.value);
+    }
+  });
+});
 </script>
 
 <style scoped>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .background-image {
   background-image: url("../assets/main-bg.png");
   background-size: cover;
@@ -157,7 +185,7 @@ function scrollTo(section) {
 }
 
 .about-section {
-  background-color: #101010; /* Dark background for About */
+  background-color: #101010;
   color: white;
   padding: 100px 20px;
   text-align: center;
@@ -176,5 +204,17 @@ function scrollTo(section) {
   margin: 0 auto;
   line-height: 1.6;
   color: #cccccc;
+}
+
+/* 💡 Animation styles */
+.about-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

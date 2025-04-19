@@ -13,4 +13,4 @@ const vuetify = createVuetify({
   directives,
 });
 
-createApp(App).use(router).use(vuetify).mount("#app").use(MotionPlugin);
+createApp(App).use(router).use(vuetify).use(MotionPlugin).mount("#app");
