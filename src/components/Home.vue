@@ -1,5 +1,12 @@
 <template>
+  <div v-if="loading" class="preloader" :class="{ 'fade-out': fadeOut }">
+    <div class="loader-text">
+      {{ displayedText }}
+    </div>
+  </div>
+
   <v-card
+    v-else
     class="d-flex flex-column background-image"
     style="height: 100vh; width: 100vw; position: relative"
   >
@@ -23,7 +30,11 @@
     </div>
   </v-card>
 
-  <section class="background-image about-section" ref="aboutSection">
+  <section
+    v-if="!loading"
+    class="background-image about-section"
+    ref="aboutSection"
+  >
     <div class="about-content" :class="{ 'fade-in': aboutVisible }">
       <h2>About Me</h2>
       <p>
@@ -40,20 +51,20 @@
 <script setup>
 import { ref, onMounted, onBeforeMount, onUnmounted } from "vue";
 
+// About section refs
 const aboutSection = ref(null);
 const aboutVisible = ref(false);
 
-// Force scroll to top before page is mounted
-onBeforeMount(() => {
-  if (typeof window !== "undefined") {
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-});
-
+// Loading and typing animation refs
+const loading = ref(true);
+const fadeOut = ref(false);
 const mainVisible = ref(false);
 
+const fullText = "Loading...";
+const displayedText = ref("");
+let typingIndex = 0;
+
+// Scroll to sections
 function scrollTo(section) {
   if (section === "home") {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -62,15 +73,46 @@ function scrollTo(section) {
   }
 }
 
-// IntersectionObserver to detect when About Section is visible
-onMounted(() => {
-  mainVisible.value = true; // Set mainVisible to true when component is mounted
+// Scroll to top before load
+onBeforeMount(() => {
+  if (typeof window !== "undefined") {
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+});
 
+// Typing effect function
+function typeText() {
+  if (typingIndex < fullText.length) {
+    displayedText.value += fullText[typingIndex];
+    typingIndex++;
+    setTimeout(typeText, 100); // 100ms per letter
+  }
+}
+
+// Main mounted logic
+onMounted(() => {
+  // Start typing immediately
+  typeText();
+
+  // After typing finishes + delay, start fading
+  setTimeout(() => {
+    fadeOut.value = true;
+  }, fullText.length * 100 + 500);
+  setTimeout(() => {
+    loading.value = false; // Hide preloader
+    mainVisible.value = true; // Show main content
+  }, 1300); // Adjust timing as necessary
+
+  // Intersection observer for About section
   const observer = new IntersectionObserver(
     ([entry]) => {
-      aboutVisible.value = entry.isIntersecting;
+      if (entry.isIntersecting) {
+        aboutVisible.value = true; // Set to true when in view
+      }
     },
-    { threshold: 0.3 } // fire when about 30% of section is visible
+    { threshold: 0.3 }
   );
 
   if (aboutSection.value) {
@@ -86,6 +128,36 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* Preloader container */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+/* Fade out when loading finishes */
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Loader fancy text */
+.loader-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: #51e688;
+  font-family: "Gugi", cursive;
+  letter-spacing: 3px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
