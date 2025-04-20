@@ -4,7 +4,7 @@
       {{ displayedText }}
     </div>
   </div>
-
+  <!-- Deploy -->
   <v-card
     v-else
     class="d-flex flex-column background-image"
