@@ -37,8 +37,9 @@
         I'm a passionate backend developer with a focus on creating scalable,
         efficient, and secure web applications. I love working with modern
         technologies and continuously learning to improve my craft. When I'm not
-        coding, you can find me exploring new coffee shops, traveling, or diving
-        into the latest tech trends!
+        coding, I usually spend my time exploring new tech trends, reading
+        books, or playing video games. I believe in the power of collaboration
+        and enjoy working with teams to bring ideas to life.
       </p>
     </div>
   </section>
