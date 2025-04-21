@@ -43,12 +43,15 @@
       <!-- Subsection: Educational Background -->
       <h3 class="subheading mt-15 mb-6">Educational Background</h3>
       <div class="education-item mb-4">
-        <h4>Bachelor of Science in Computer Science</h4>
-        <p>XYZ University • 2019 - 2023</p>
+        <h4>Bachelor of Science in Information Technology</h4>
+        <p>
+          Caraga State University • 2021 -
+          <span class="green-text">Present</span>
+        </p>
       </div>
       <div class="education-item mb-4">
         <h4>Senior High School - STEM Strand</h4>
-        <p>ABC High School • 2017 - 2019</p>
+        <p>Bayugan National Comprehensive High School • 2018 - 2020</p>
       </div>
     </div>
   </section>
@@ -372,5 +375,8 @@ onMounted(() => {
 .fade-in {
   opacity: 1;
   transform: translateY(0);
+}
+.green-text {
+  color: #51e688;
 }
 </style>
