@@ -293,9 +293,28 @@ onMounted(() => {
 }
 
 .about-section h2 {
-  font-size: 28px;
+  font-size: 26px;
   color: #51e688;
   margin-bottom: 20px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.about-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #51e688;
+  transition: width 0.3s ease;
+}
+
+.about-section h2:hover::after {
+  width: 100%;
 }
 
 .about-section p {
