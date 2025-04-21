@@ -299,8 +299,7 @@ onMounted(() => {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  transition: color 0.3s ease;
-  overflow: hidden; /* ✨ Make sure the pseudo-element stays inside */
+  overflow: hidden;
 }
 
 .about-section h2::after {
@@ -308,16 +307,18 @@ onMounted(() => {
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform: translateX(-50%) scaleX(0); /* ✨ Start from center */
+  transform: translateX(-50%) scaleX(0);
   transform-origin: center;
   width: 100%;
   height: 2px;
   background-color: #51e688;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1),
+    box-shadow 0.4s ease;
 }
 
 .about-section h2:hover::after {
-  transform: translateX(-50%) scaleX(1); /* ✨ Full width on hover */
+  transform: translateX(-50%) scaleX(1);
+  box-shadow: 0 0 8px #51e68888; /* ✨ Nice soft glow */
 }
 
 .about-section p {
