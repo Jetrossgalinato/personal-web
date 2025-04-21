@@ -300,21 +300,24 @@ onMounted(() => {
   position: relative;
   display: inline-block;
   transition: color 0.3s ease;
+  overflow: hidden; /* ✨ Make sure the pseudo-element stays inside */
 }
 
 .about-section h2::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0); /* ✨ Start from center */
+  transform-origin: center;
+  width: 100%;
   height: 2px;
   background-color: #51e688;
-  transition: width 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .about-section h2:hover::after {
-  width: 100%;
+  transform: translateX(-50%) scaleX(1); /* ✨ Full width on hover */
 }
 
 .about-section p {
