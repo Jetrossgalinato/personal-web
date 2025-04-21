@@ -33,14 +33,23 @@
   <section class="background-image about-section" ref="aboutSection">
     <div class="about-content" :class="{ 'fade-in': aboutVisible }">
       <h2>About Me</h2>
+
       <p>
         I'm a passionate backend developer with a focus on creating scalable,
         efficient, and secure web applications. I love working with modern
-        technologies and continuously learning to improve my craft. When I'm not
-        coding, I usually spend my time exploring new tech trends, reading
-        books, or playing video games. I believe in the power of collaboration
-        and enjoy working with teams to bring ideas to life.
+        technologies and continuously learning to improve my craft.
       </p>
+
+      <!-- Subsection: Educational Background -->
+      <h3 class="subheading mt-15 mb-6">Educational Background</h3>
+      <div class="education-item mb-4">
+        <h4>Bachelor of Science in Computer Science</h4>
+        <p>XYZ University • 2019 - 2023</p>
+      </div>
+      <div class="education-item mb-4">
+        <h4>Senior High School - STEM Strand</h4>
+        <p>ABC High School • 2017 - 2019</p>
+      </div>
     </div>
   </section>
 </template>
@@ -51,6 +60,10 @@ import { ref, onMounted, onBeforeMount, onUnmounted } from "vue";
 // About section refs
 const aboutSection = ref(null);
 const aboutVisible = ref(false);
+
+// Education section refs (✨ NEW ✨)
+const educationSection = ref(null);
+const educationVisible = ref(false);
 
 // Loading and typing animation refs
 const loading = ref(true);
@@ -66,8 +79,12 @@ function scrollTo(section) {
   if (section === "home") {
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else if (section === "about" && aboutSection.value) {
-    aboutVisible.value = true; // Set to true when navigating to About
+    aboutVisible.value = true;
     aboutSection.value.scrollIntoView({ behavior: "smooth" });
+  } else if (section === "education" && educationSection.value) {
+    // ✨ Add this
+    educationVisible.value = true;
+    educationSection.value.scrollIntoView({ behavior: "smooth" });
   }
 }
 
@@ -85,7 +102,7 @@ function typeText() {
   if (typingIndex < fullText.length) {
     displayedText.value += fullText[typingIndex];
     typingIndex++;
-    setTimeout(typeText, 100); // 100ms per letter
+    setTimeout(typeText, 100);
   }
 }
 
@@ -99,28 +116,43 @@ onMounted(() => {
     fadeOut.value = true;
   }, fullText.length * 100 + 500);
   setTimeout(() => {
-    loading.value = false; // Hide preloader
-    mainVisible.value = true; // Show main content
-  }, 1300); // Adjust timing as necessary
+    loading.value = false;
+    mainVisible.value = true;
+  }, 1300);
 
   // Intersection observer for About section
-  const observer = new IntersectionObserver(
+  const aboutObserver = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        aboutVisible.value = true; // Set to true when in view
+        aboutVisible.value = true;
       }
     },
     { threshold: 0.3 }
   );
 
   if (aboutSection.value) {
-    observer.observe(aboutSection.value);
+    aboutObserver.observe(aboutSection.value);
   }
 
+  // Intersection observer for Education section ✨
+  const educationObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        educationVisible.value = true;
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  if (educationSection.value) {
+    educationObserver.observe(educationSection.value);
+  }
+
+  // Clean up when unmounting
   onUnmounted(() => {
-    if (aboutSection.value) {
-      observer.unobserve(aboutSection.value);
-    }
+    if (aboutSection.value) aboutObserver.unobserve(aboutSection.value);
+    if (educationSection.value)
+      educationObserver.unobserve(educationSection.value);
   });
 });
 </script>
