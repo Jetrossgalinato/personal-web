@@ -75,28 +75,36 @@
           <span>JavaScript</span>
         </div>
         <div class="technology">
-          <i class="fab fa-node-js"></i>
-          <span>Node.js</span>
-        </div>
-        <div class="technology">
           <i class="fab fa-vuejs"></i>
           <span>Vue.js</span>
         </div>
         <div class="technology">
-          <i class="fas fa-server"></i>
-          <span>Express.js</span>
+          <i class="fab fa-node-js"></i>
+          <span>Node.js</span>
         </div>
         <div class="technology">
-          <i class="fas fa-database"></i>
-          <span>MongoDB</span>
+          <i class="fab fa-php"></i>
+          <span>PHP</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-laravel"></i>
+          <span>Laravel</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-python"></i>
+          <span>Python</span>
+        </div>
+        <div class="technology">
+          <i class="fas fa-project-diagram"></i>
+          <span>Django</span>
         </div>
         <div class="technology">
           <i class="fas fa-database"></i>
           <span>MySQL</span>
         </div>
         <div class="technology">
-          <i class="fab fa-docker"></i>
-          <span>Docker</span>
+          <i class="fas fa-database"></i>
+          <span>PostgreSQL</span>
         </div>
         <div class="technology">
           <i class="fab fa-git-alt"></i>
