@@ -39,6 +39,19 @@
         efficient, and secure web applications. I love working with modern
         technologies and continuously learning to improve my craft.
       </p>
+      <!-- Years of Experience -->
+      <div class="experience-section mt-15">
+        <h3 class="subheading">Years of Experience</h3>
+        <div class="tally-container">
+          <span class="tally-group">
+            <span class="tally-line"></span>
+            <span class="tally-line"></span>
+            <span class="tally-line"></span>
+            <span class="tally-line"></span>
+            <!-- <span class="tally-diagonal"></span> -->
+          </span>
+        </div>
+      </div>
 
       <!-- Subsection: Educational Background -->
       <h3 class="subheading mt-15 mb-6">Educational Background</h3>
@@ -318,6 +331,53 @@ onMounted(() => {
   font-weight: lighter;
   margin-top: 10px;
   color: #ffffffcc;
+}
+
+.tally-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.tally-group {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+}
+
+.tally-line {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: #51e688;
+  position: absolute;
+}
+
+.tally-line:nth-child(1) {
+  left: 0;
+}
+
+.tally-line:nth-child(2) {
+  left: 6px;
+}
+
+.tally-line:nth-child(3) {
+  left: 12px;
+}
+
+.tally-line:nth-child(4) {
+  left: 18px;
+}
+
+.tally-diagonal {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #51e688;
+  transform: rotate(-45deg);
+  left: 9px;
 }
 
 .about-section {
