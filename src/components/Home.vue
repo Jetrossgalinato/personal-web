@@ -41,13 +41,13 @@
       </p>
       <!-- Years of Experience -->
       <div class="experience-section mt-15">
-        <h3 class="subheading">Years of Experience</h3>
+        <h3 class="subheading">Years of Coding Experience</h3>
         <div class="tally-container">
           <span class="tally-group">
             <span class="tally-line"></span>
             <span class="tally-line"></span>
             <span class="tally-line"></span>
-            <span class="tally-line"></span>
+            <!-- <span class="tally-line"></span> -->
             <!-- <span class="tally-diagonal"></span> -->
           </span>
         </div>
@@ -65,6 +65,43 @@
       <div class="education-item mb-4">
         <h4>Senior High School - STEM Strand</h4>
         <p>Bayugan National Comprehensive High School • 2018 - 2020</p>
+      </div>
+
+      <!-- Subsection: Technologies -->
+      <h3 class="subheading mt-15 mb-6">Technologies</h3>
+      <div class="technologies-container">
+        <div class="technology">
+          <i class="fab fa-js"></i>
+          <span>JavaScript</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-node-js"></i>
+          <span>Node.js</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-vuejs"></i>
+          <span>Vue.js</span>
+        </div>
+        <div class="technology">
+          <i class="fas fa-server"></i>
+          <span>Express.js</span>
+        </div>
+        <div class="technology">
+          <i class="fas fa-database"></i>
+          <span>MongoDB</span>
+        </div>
+        <div class="technology">
+          <i class="fas fa-database"></i>
+          <span>MySQL</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-docker"></i>
+          <span>Docker</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-git-alt"></i>
+          <span>Git</span>
+        </div>
       </div>
     </div>
   </section>
@@ -331,6 +368,60 @@ onMounted(() => {
   font-weight: lighter;
   margin-top: 10px;
   color: #ffffffcc;
+}
+.technologies-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to the next line */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  max-width: 850px; /* Limits the width to fit 5 items per row */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.technology {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  color: #51e688;
+  padding: 12px 25px;
+  border: 2px solid #51e688;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: "Gugi", cursive;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3),
+    inset 0 0 10px rgba(81, 230, 136, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex: 1 1 calc(20% - 20px); /* Ensures 5 items per row with spacing */
+  max-width: calc(20% - 20px); /* Prevents items from exceeding 5 per row */
+}
+
+.technology i {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.technology span {
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.technology:hover {
+  background: linear-gradient(145deg, #51e688, #3cbf6b);
+  color: #101010;
+  box-shadow: 0 6px 12px rgba(81, 230, 136, 0.4),
+    inset 0 0 15px rgba(81, 230, 136, 0.3);
+}
+
+.technology:hover i {
+  transform: scale(1.2);
+}
+
+.technology:hover span {
+  color: #101010;
 }
 
 .tally-container {
