@@ -19,7 +19,6 @@
         <span @click="scrollTo('home')">Home</span>
         <span @click="scrollTo('about')">About</span>
         <span>Projects</span>
-        <span>Contact</span>
       </div>
     </v-app-bar>
 
