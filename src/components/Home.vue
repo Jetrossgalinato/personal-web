@@ -155,6 +155,17 @@
           <br />
           <v-divider></v-divider>
           <span class="project-dates">Started: Jan 2023 | Ended: Mar 2023</span>
+          <br />
+          <br />
+          <strong>Technologies Used:</strong>
+          <div
+            class="project-technologies-icons"
+            style="display: flex; gap: 10px; color: #51e688"
+          >
+            <i class="fab fa-vuejs" title="Vue.js"></i>
+            <i class="fab fa-laravel" title="laravel"></i>
+            <i class="fas fa-database" title="PostgreSql"></i>
+          </div>
         </v-card-text>
       </v-card>
 
@@ -173,6 +184,17 @@
           <br />
           <v-divider></v-divider>
           <span class="project-dates">Started: Apr 2023 | Ended: Jun 2023</span>
+          <br />
+          <br />
+          <strong>Technologies Used:</strong>
+          <div
+            class="project-technologies-icons"
+            style="display: flex; gap: 10px; color: #51e688"
+          >
+            <i class="fab fa-vuejs" title="Vue.js"></i>
+            <i class="fab fa-laravel" title="laravel"></i>
+            <i class="fas fa-database" title="PostgreSql"></i>
+          </div>
         </v-card-text>
       </v-card>
     </div>
