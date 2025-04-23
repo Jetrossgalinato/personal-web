@@ -74,9 +74,10 @@
           <i class="fab fa-js"></i>
           <span>JavaScript</span>
         </div>
-        <div class="technology">
+        <div class="technology tooltip">
           <i class="fab fa-vuejs"></i>
           <span>Vue.js</span>
+          <span class="tooltip-text">Currently Learning</span>
         </div>
         <div class="technology">
           <i class="fab fa-node-js"></i>
@@ -86,9 +87,10 @@
           <i class="fab fa-php"></i>
           <span>PHP</span>
         </div>
-        <div class="technology">
+        <div class="technology tooltip">
           <i class="fab fa-laravel"></i>
           <span>Laravel</span>
+          <span class="tooltip-text">Currently Learning</span>
         </div>
         <div class="technology">
           <i class="fab fa-python"></i>
@@ -477,6 +479,34 @@ onMounted(() => {
   background-color: #51e688;
   transform: rotate(-45deg);
   left: 9px;
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 120%; /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #51e688;
+  color: #101010;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: "Gugi", cursive;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 .about-section {
