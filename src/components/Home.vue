@@ -97,10 +97,9 @@
           <i class="fab fa-js"></i>
           <span>JavaScript</span>
         </div>
-        <div class="technology tooltip">
+        <div class="technology">
           <i class="fab fa-vuejs"></i>
           <span>Vue.js</span>
-          <span class="tooltip-text">Currently Learning</span>
         </div>
         <div class="technology">
           <i class="fab fa-node-js"></i>
@@ -110,18 +109,18 @@
           <i class="fab fa-php"></i>
           <span>PHP</span>
         </div>
-        <div class="technology tooltip">
+        <div class="technology">
           <i class="fab fa-laravel"></i>
           <span>Laravel</span>
-          <span class="tooltip-text">Currently Learning</span>
         </div>
         <div class="technology">
           <i class="fab fa-python"></i>
           <span>Python</span>
         </div>
-        <div class="technology">
+        <div class="technology tooltip">
           <i class="fas fa-project-diagram"></i>
           <span>Django</span>
+          <span class="tooltip-text">Currently Learning</span>
         </div>
         <div class="technology">
           <i class="fas fa-database"></i>
