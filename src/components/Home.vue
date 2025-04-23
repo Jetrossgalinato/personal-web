@@ -153,6 +153,7 @@
           A Meal Subscription and Delivery System that allows users to subscribe
           to meal plans and have them delivered to their doorstep.
           <br />
+          <v-divider></v-divider>
           <span class="project-dates">Started: Jan 2023 | Ended: Mar 2023</span>
         </v-card-text>
       </v-card>
@@ -170,6 +171,7 @@
           A website where farmers can trade their products and connect with
           other farmers. It includes a forum for discussions and sharing tips.
           <br />
+          <v-divider></v-divider>
           <span class="project-dates">Started: Apr 2023 | Ended: Jun 2023</span>
         </v-card-text>
       </v-card>
