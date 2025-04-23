@@ -137,6 +137,35 @@
       </div>
     </div>
   </section>
+  <section class="projects-section background-image" ref="projectsSection">
+    <h3 class="subheading mt-15 mb-6">Projects</h3>
+    <div class="projects-container">
+      <v-card class="project-card" outlined>
+        <v-card-title>Project 1</v-card-title>
+        <v-card-text>
+          A brief description of the project goes here.
+          <br />
+          <span class="project-dates">Started: Jan 2023 | Ended: Mar 2023</span>
+        </v-card-text>
+      </v-card>
+      <v-card class="project-card" outlined>
+        <v-card-title>Project 2</v-card-title>
+        <v-card-text>
+          A brief description of the project goes here.
+          <br />
+          <span class="project-dates">Started: Apr 2023 | Ended: Jun 2023</span>
+        </v-card-text>
+      </v-card>
+      <v-card class="project-card" outlined>
+        <v-card-title>Project 3</v-card-title>
+        <v-card-text>
+          A brief description of the project goes here.
+          <br />
+          <span class="project-dates">Started: Jul 2023 | Ended: Sep 2023</span>
+        </v-card-text>
+      </v-card>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -617,5 +646,45 @@ onMounted(() => {
 }
 .green-text {
   color: #51e688;
+}
+
+.projects-section {
+  background-color: #101010;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: "Gugi", cursive;
+}
+
+.projects-section h3 {
+  font-size: 26px;
+  color: #51e688;
+  margin-bottom: 20px;
+}
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  width: 300px;
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  color: #ffffffcc;
+  border: 2px solid #51e688;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(81, 230, 136, 0.4),
+    inset 0 0 15px rgba(81, 230, 136, 0.3);
+}
+
+.project-dates {
+  font-size: 12px;
+  color: #cccccc;
 }
 </style>
