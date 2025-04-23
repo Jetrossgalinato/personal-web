@@ -147,9 +147,10 @@
           class="project-image"
           height="150px"
         ></v-img>
-        <v-card-title>Project 1</v-card-title>
+        <v-card-title>Meal Mate</v-card-title>
         <v-card-text>
-          A brief description of the project goes here.
+          A Meal Subscription and Delivery System that allows users to subscribe
+          to meal plans and have them delivered to their doorstep.
           <br />
           <span class="project-dates">Started: Jan 2023 | Ended: Mar 2023</span>
         </v-card-text>
@@ -161,25 +162,12 @@
           class="project-image"
           height="150px"
         ></v-img>
-        <v-card-title>Project 2</v-card-title>
+        <v-card-title>Agriloop</v-card-title>
         <v-card-text>
-          A brief description of the project goes here.
+          A website where farmers can trade their products and connect with
+          other farmers. It includes a forum for discussions and sharing tips.
           <br />
           <span class="project-dates">Started: Apr 2023 | Ended: Jun 2023</span>
-        </v-card-text>
-      </v-card>
-      <v-card class="project-card" outlined>
-        <v-img
-          src="../assets/project3.jpg"
-          alt="Project 3 Image"
-          class="project-image"
-          height="150px"
-        ></v-img>
-        <v-card-title>Project 3</v-card-title>
-        <v-card-text>
-          A brief description of the project goes here.
-          <br />
-          <span class="project-dates">Started: Jul 2023 | Ended: Sep 2023</span>
         </v-card-text>
       </v-card>
     </div>
