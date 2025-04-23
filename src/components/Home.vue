@@ -26,6 +26,30 @@
       <h1>Hi I'm Jetross Galinato</h1>
       <h2 class="hover-underline">Backend Developer</h2>
       <h3>Based in the Philippines</h3>
+
+      <!-- Contact Icons -->
+      <div class="contact-icons">
+        <a
+          href="https://github.com/Jetrossgalinato"
+          target="_blank"
+          class="contact-icon"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jetross-galinato-141ba5361/"
+          target="_blank"
+          class="contact-icon"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:jetrossgalinato@gmail.com" class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://x.com/JetrossG" target="_blank" class="contact-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
     </div>
   </v-card>
 
@@ -315,6 +339,34 @@ onMounted(() => {
     opacity: 1;
     transform: translate(-50%, -50%) translateY(0);
   }
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #101010;
+  color: #51e688;
+  border: 2px solid #51e688;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icon:hover {
+  background-color: #51e688;
+  color: #101010;
+  transform: scale(1.1);
 }
 
 .fade-in-main {
