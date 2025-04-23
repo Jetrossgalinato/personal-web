@@ -18,7 +18,7 @@
       >
         <span @click="scrollTo('home')">Home</span>
         <span @click="scrollTo('about')">About</span>
-        <span>Projects</span>
+        <span @click="scrollTo('projects')">Projects</span>
       </div>
     </v-app-bar>
 
@@ -179,6 +179,9 @@ const aboutVisible = ref(false);
 const educationSection = ref(null);
 const educationVisible = ref(false);
 
+// Projects section refs
+const projectsSection = ref(null);
+
 // Loading and typing animation refs
 const loading = ref(true);
 const fadeOut = ref(false);
@@ -195,10 +198,8 @@ function scrollTo(section) {
   } else if (section === "about" && aboutSection.value) {
     aboutVisible.value = true;
     aboutSection.value.scrollIntoView({ behavior: "smooth" });
-  } else if (section === "education" && educationSection.value) {
-    // ✨ Add this
-    educationVisible.value = true;
-    educationSection.value.scrollIntoView({ behavior: "smooth" });
+  } else if (section === "projects" && projectsSection.value) {
+    projectsSection.value.scrollIntoView({ behavior: "smooth" });
   }
 }
 
