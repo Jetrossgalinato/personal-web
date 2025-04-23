@@ -140,13 +140,8 @@
   <section class="projects-section background-image" ref="projectsSection">
     <h3 class="subheading mt-15 mb-6">Projects</h3>
     <div class="projects-container">
+      <!-- Project 1 -->
       <v-card class="project-card" outlined>
-        <v-img
-          src="../assets/project1.jpg"
-          alt="Project 1 Image"
-          class="project-image"
-          height="150px"
-        ></v-img>
         <v-card-title>Meal Mate</v-card-title>
         <v-card-text>
           A Meal Subscription and Delivery System that allows users to subscribe
@@ -155,13 +150,9 @@
           <span class="project-dates">Started: Jan 2023 | Ended: Mar 2023</span>
         </v-card-text>
       </v-card>
+
+      <!-- Project 2 -->
       <v-card class="project-card" outlined>
-        <v-img
-          src="../assets/project2.jpg"
-          alt="Project 2 Image"
-          class="project-image"
-          height="150px"
-        ></v-img>
         <v-card-title>Agriloop</v-card-title>
         <v-card-text>
           A website where farmers can trade their products and connect with
@@ -693,11 +684,5 @@ onMounted(() => {
 .project-dates {
   font-size: 12px;
   color: #cccccc;
-}
-
-.project-image {
-  border-bottom: 2px solid #51e688;
-  border-radius: 10px 10px 0 0; /* Rounded corners for the top of the card */
-  object-fit: cover; /* Ensures the image fits nicely */
 }
 </style>
