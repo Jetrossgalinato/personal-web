@@ -143,6 +143,12 @@
       <!-- Project 1 -->
       <v-card class="project-card" outlined>
         <v-card-title>Meal Mate</v-card-title>
+        <v-img
+          :src="MealMateImg"
+          alt="Meal Mate Image"
+          height="150px"
+          cover
+        ></v-img>
         <v-card-text>
           A Meal Subscription and Delivery System that allows users to subscribe
           to meal plans and have them delivered to their doorstep.
@@ -154,6 +160,12 @@
       <!-- Project 2 -->
       <v-card class="project-card" outlined>
         <v-card-title>Agriloop</v-card-title>
+        <v-img
+          :src="AgriloopImg"
+          alt="Meal Mate Image"
+          height="150px"
+          cover
+        ></v-img>
         <v-card-text>
           A website where farmers can trade their products and connect with
           other farmers. It includes a forum for discussions and sharing tips.
@@ -167,6 +179,9 @@
 
 <script setup>
 import { ref, onMounted, onBeforeMount, onUnmounted } from "vue";
+
+import MealMateImg from "@/assets/mealmate.jpg";
+import AgriloopImg from "@/assets/agriloop.jpg";
 
 // About section refs
 const aboutSection = ref(null);
@@ -684,5 +699,13 @@ onMounted(() => {
 .project-dates {
   font-size: 12px;
   color: #cccccc;
+}
+
+.project-image {
+  border-bottom: 2px solid #51e688;
+  border-radius: 10px 10px 0 0; /* Rounded corners for the top of the card */
+  object-fit: cover; /* Ensures the image fits nicely */
+  width: 100%; /* Ensures the image spans the full width of the card */
+  height: 150px; /* Matches the height specified in the v-img component */
 }
 </style>
