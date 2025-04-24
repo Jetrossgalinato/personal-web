@@ -204,9 +204,18 @@
       <div class="footer-technologies">
         <span>Technologies Used:</span>
         <div class="footer-icons">
-          <i class="fab fa-vuejs" title="Vue.js"></i>
-          <i class="fas fa-layer-group" title="Vuetify"></i>
-          <i class="fas fa-cloud" title="Vercel"></i>
+          <div class="footer-icon">
+            <i class="fab fa-vuejs" title="Vue.js"></i>
+            <span>Vue.js</span>
+          </div>
+          <div class="footer-icon">
+            <i class="fas fa-layer-group" title="Vuetify"></i>
+            <span>Vuetify</span>
+          </div>
+          <div class="footer-icon">
+            <i class="fas fa-cloud" title="Vercel"></i>
+            <span>Vercel</span>
+          </div>
         </div>
       </div>
       <div class="footer-rights">
@@ -746,5 +755,49 @@ onMounted(() => {
   object-fit: cover; /* Ensures the image fits nicely */
   width: 100%; /* Ensures the image spans the full width of the card */
   height: 150px; /* Matches the height specified in the v-img component */
+}
+
+.footer {
+  background-color: #101010;
+  color: #cccccc;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Gugi", cursive;
+  border-top: 2px solid #51e688;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-technologies {
+  font-size: 14px;
+  color: #ffffffcc;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.footer-icons i {
+  font-size: 20px;
+  justify-content: center;
+  color: #51e688;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icons i:hover {
+  transform: scale(1.2);
+  color: #3cbf6b;
+}
+
+.footer-rights {
+  font-size: 12px;
+  color: #cccccc;
 }
 </style>
