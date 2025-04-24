@@ -199,6 +199,21 @@
       </v-card>
     </div>
   </section>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-technologies">
+        <span>Technologies Used:</span>
+        <div class="footer-icons">
+          <i class="fab fa-vuejs" title="Vue.js"></i>
+          <i class="fas fa-layer-group" title="Vuetify"></i>
+          <i class="fas fa-cloud" title="Vercel"></i>
+        </div>
+      </div>
+      <div class="footer-rights">
+        <span>© 2025 Jetross Galinato. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script setup>
