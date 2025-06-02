@@ -134,6 +134,14 @@
           <i class="fab fa-git-alt"></i>
           <span>Git</span>
         </div>
+        <div class="technology">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" style="width:20px; height:20px;" />
+          <span>TypeScript</span>
+        </div>
+        <div class="technology">
+          <i class="fab fa-react"></i>
+          <span>React.Js</span>
+        </div>
       </div>
     </div>
   </section>
