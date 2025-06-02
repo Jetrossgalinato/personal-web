@@ -134,13 +134,15 @@
           <i class="fab fa-git-alt"></i>
           <span>Git</span>
         </div>
-        <div class="technology">
+        <div class="technology tooltip">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" style="width:20px; height:20px;" />
           <span>TypeScript</span>
+          <span class="tooltip-text">Currently Learning</span>
         </div>
-        <div class="technology">
+        <div class="technology tooltip">
           <i class="fab fa-react"></i>
           <span>React.Js</span>
+          <span class="tooltip-text">Currently Learning</span>
         </div>
       </div>
     </div>
@@ -205,6 +207,35 @@
           </div>
         </v-card-text>
       </v-card>
+
+      <!-- Project 3 -->
+      <v-card class="project-card" outlined>
+        <v-card-title>FinTeach</v-card-title>
+        <v-img
+          :src="FinTeachImg"
+          alt="FinTeach Image"
+          height="150px"
+          cover
+        ></v-img>
+        <v-card-text>
+          FinTeach helps users manage savings, investments, incomes, and expenses—all in one place. 
+          It also features an AI advisor for smart financial guidance.
+          <br />
+          <v-divider></v-divider>
+          <span class="project-dates">Started: May 2025 | Ended: Jun 2025</span>
+          <br />
+          <br />
+          <strong>Technologies Used:</strong>
+          <div
+            class="project-technologies-icons"
+            style="display: flex; gap: 10px; color: #51e688"
+          >
+            <i class="fab fa-react" title="React.js"></i>
+            <i class="fab fa-python" title="Django"></i>
+            <i class="fas fa-database" title="PostgreSql"></i>
+          </div>
+        </v-card-text>
+      </v-card>
     </div>
   </section>
   <footer class="footer">
@@ -238,6 +269,7 @@ import { ref, onMounted, onBeforeMount, onUnmounted } from "vue";
 
 import MealMateImg from "@/assets/mealmate.jpg";
 import AgriloopImg from "@/assets/agriloop.jpg";
+import FinTeachImg from "@/assets/finteach.jpeg";
 
 // About section refs
 const aboutSection = ref(null);
