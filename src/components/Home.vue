@@ -11,7 +11,7 @@
     style="height: 100vh; width: 100vw; position: relative"
   >
     <!-- Navbar -->
-    <v-app-bar rounded class="navbar">
+    <v-app-bar rounded class="navbar pt-6">
       <div
         class="d-flex position-absolute left-0 right-0 justify-center pt-4"
         style="gap: 50px"
@@ -373,6 +373,18 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+@media (max-width: 600px) {
+  .technology span:not(.tooltip-text) {
+    display: none;
+  }
+  .technology {
+    padding: 12px 0;
+    min-width: 40px;
+    justify-content: center;
+  }
+}
+
 /* Preloader container */
 .preloader {
   position: fixed;
@@ -437,7 +449,7 @@ onMounted(() => {
   position: relative;
   transition: color 0.3s ease;
   padding-bottom: 4px;
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .navbar span::after {
